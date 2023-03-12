@@ -8,17 +8,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HeaderComponent } from './components/header/header.component';
 import { MatCardModule } from '@angular/material/card';
-import { BookModule } from './modules/product-module/product-module.module';
+import { ProductModule } from './modules/product/product.module';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BookModule,
+    ProductModule,
     FormsModule,
     BrowserAnimationsModule,
     MatGridListModule,

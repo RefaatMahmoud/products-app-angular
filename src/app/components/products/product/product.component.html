@@ -1,5 +1,10 @@
 <div class="product-item">
   <img [src]="product.image" width="100px" height="100px" />
   <p class="price">{{ product.name }} - {{ product.price }}</p>
-  <button class="add-to-cart" (click)="addToCart()">Add to cart</button>
+  <button *ngIf="inCart" class="add-to-cart" (click)="toggleCart()">
+    Remove from cart
+  </button>
+  <button *ngIf="!inCart" class="add-to-cart" (click)="toggleCart()">
+    Add to cart
+  </button>
 </div>

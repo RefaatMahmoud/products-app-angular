@@ -1,0 +1,8 @@
+<h3>Cart Data</h3>
+<p *ngIf="!getCartData().length; else hasCartData">No products in cart</p>
+
+<ng-template #hasCartData>
+  <ul *ngFor="let product of getCartData()">
+    <li>{{ product.name }}</li>
+  </ul>
+</ng-template>

@@ -1,0 +1,5 @@
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let product of products">
+   <app-product (productEvent)="addToCart($event)" [product]="product"/>
+  </mat-grid-tile>
+</mat-grid-list>

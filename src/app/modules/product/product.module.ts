@@ -14,4 +14,4 @@ import { MatGridListModule } from '@angular/material/grid-list';
   ],
   exports: [ProductsComponent]
 })
-export class BookModule { }
+export class ProductModule { }

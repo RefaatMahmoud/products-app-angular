@@ -10,13 +10,8 @@ import { ProductsService } from 'src/app/services/products.service';
 
 export class ProductsComponent {
 
-  constructor(private bookService: ProductsService) { }
+  constructor(private _productService: ProductsService) { }
 
-  public products: Product[] = this.bookService.getProducts()
+  public products: Product[] = this._productService.getProducts()
 
-  cart: Product[] = []
-
-  addToCart = (product: Product) => {
-    console.log(product)
-  }
 }

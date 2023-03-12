@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,17 @@ import { Product } from 'src/app/interfaces/product';
 })
 export class ProductComponent {
   @Input() product: Product = {} as Product
-  @Output() productEvent = new EventEmitter<Product>()
+  inCart: boolean = false;
 
-  addToCart = () => {
-    this.productEvent.emit(this.product)
+  constructor(private _cartService: CartService) { }
+
+  toggleCart = () => {
+    const findIndex = this._cartService.findIndex(this.product);
+    if (findIndex >= 0) {
+      this._cartService.remove(this.product)
+    } else {
+      this._cartService.push(this.product)
+    }
+    this.inCart = !this.inCart
   }
 }

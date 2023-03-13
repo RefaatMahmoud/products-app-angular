@@ -1,10 +1,12 @@
-<div class="product-item">
-  <img [src]="product.image" width="100px" height="100px" />
-  <p class="price">{{ product.name }} - {{ product.price }}</p>
-  <button *ngIf="inCart" class="add-to-cart" (click)="toggleCart()">
-    Remove from cart
-  </button>
-  <button *ngIf="!inCart" class="add-to-cart" (click)="toggleCart()">
-    Add to cart
-  </button>
+<div class="flex border rounded-xl h-40 p-5 mt-5">
+  <div>
+    <img [src]="product.image" width="100px" height="100px" class="rounded-sm" />
+  </div>
+  <div class="mx-auto">
+    <p class="text-l">{{ product.name }}</p>
+    <p class="my-4"> {{ product.price | currency }}</p>
+    <button class="bg-blue-600 text-white w-20 rounded p-3" (click)="toggleCart()">
+      {{ !inCart ? 'Add' : 'Remove' }}
+    </button>
+  </div>
 </div>

@@ -1,5 +1,5 @@
-<mat-grid-list cols="4">
-  <mat-grid-tile *ngFor="let product of products">
-   <app-product [product]="product"/>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container grid grid-cols-3 gap-3 mx-auto">
+  <div *ngFor="let product of products">
+    <app-product class="p-5 text-center" [product]="product" />
+  </div>
+</div>
